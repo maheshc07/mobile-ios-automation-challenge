@@ -8,37 +8,49 @@
 import Foundation
 import XCTest
 
-class LoginScreen {
+class LoginScreen: CommonUtility {
     let usernameTextField = XCUIApplication().textFields[AccessibilityIndentifiers.Home.usernameTextField]
     let passwordTextField = XCUIApplication().textFields[AccessibilityIndentifiers.Home.passwordTextField]
     let loginButton = XCUIApplication().buttons[AccessibilityIndentifiers.Home.loginButton]
     let dismissButton = XCUIApplication().buttons[AccessibilityIndentifiers.Home.dismissButton]
     let wrongCredentials = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.wrongCredentials]
+    let searchExercises = XCUIApplication().navigationBars[AccessibilityIndentifiers.Home.listView].searchFields[AccessibilityIndentifiers.Home.searchExercises]
     
     func validateLogin(username: String, password: String) {
-        usernameTextField.tap()
+        tapOn(usernameTextField, action: .exists, description: "\(usernameTextField)")
         usernameTextField.typeText(username)
-        passwordTextField.tap()
+        tapOn(passwordTextField, action: .exists, description: "\(passwordTextField)")
         passwordTextField.typeText(password)
-        loginButton.tap()
+        tapOn(loginButton, action: .exists, description: "\(loginButton)")
+        tapOn(searchExercises, action: .exists, description: "\(searchExercises)")
     }
 
     func invalidLogin(username: String, password: String) {
-        usernameTextField.tap()
+        tapOn(usernameTextField, action: .exists, description: "\(usernameTextField)")
         usernameTextField.typeText(username)
-        passwordTextField.tap()
+        tapOn(passwordTextField, action: .exists, description: "\(passwordTextField)")
         passwordTextField.typeText(password)
-        loginButton.tap()
+        tapOn(loginButton, action: .exists, description: "\(loginButton)")
+        tapOn(wrongCredentials, action: .exists, description: "\(wrongCredentials)")
     }
     
     func invalidLoginWithoutUsername() {
-        usernameTextField.tap()
-        loginButton.tap()
+        tapOn(usernameTextField, action: .exists, description: "\(usernameTextField)")
+        tapOn(loginButton, action: .exists, description: "\(loginButton)")
+        tapOn(wrongCredentials, action: .exists, description: "\(wrongCredentials)")
     }
     
     func invalidLoginWithoutPassword(username: String) {
-        usernameTextField.tap()
+        tapOn(usernameTextField, action: .exists, description: "\(usernameTextField)")
         usernameTextField.typeText(username)
-        loginButton.tap()
+        tapOn(loginButton, action: .exists, description: "\(loginButton)")
+        tapOn(wrongCredentials, action: .exists, description: "\(wrongCredentials)")
+    }
+    
+    func tryAgainDismissButton() {
+        tapOn(usernameTextField, action: .exists, description: "\(usernameTextField)")
+        tapOn(loginButton, action: .exists, description: "\(loginButton)")
+        tapOn(wrongCredentials, action: .exists, description: "\(wrongCredentials)")
+        tapOn(dismissButton, action: .exists, description: "\(dismissButton)")
     }
 }

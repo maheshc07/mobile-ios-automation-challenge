@@ -9,18 +9,6 @@
 import Foundation
 import XCTest
 
-public class CommonUtilities {
-    
-}
-
-extension String {
-    var localized: String {
-         
-        let bundle = Bundle(for: CommonUtilities.self)
-        return NSLocalizedString(self, tableName: "Localizable", bundle: bundle, value: "", comment: "")
-    }
-}
-
 public protocol CommonUtility {
     func tapOn(_ element: XCUIElement, seconds: TimeInterval, action: TapAction, description: String)
     func checkForElement(_ element: XCUIElement, seconds: TimeInterval, action: CheckAction, description: String)

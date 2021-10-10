@@ -1,14 +1,14 @@
 //
-//  EquipmentTest.swift
+//  HomeTest.swift
 //  qa-automation-ios-testUITests
 //
-//  Created by Mahesh Chandrashekar on 09/10/21.
+//  Created by Mahesh Chandrashekar on 10/10/21.
 //  Copyright © 2021 Lorenzo Bulfone. All rights reserved.
 //
-import Foundation
+
 import XCTest
 
-class EquipmentTest: XCTestCase {
+class HomeTest: XCTestCase {
     var app: XCUIApplication!
     let loginScreen = LoginScreen()
     let homeScreen = HomeScreen()
@@ -30,22 +30,35 @@ class EquipmentTest: XCTestCase {
 //        GenericLibrary.deleteApp(appName: "Gymondo")
         app.terminate()
     }
-    
-    func testCheckForOverLaterals() {
+
+    func testKettlebellSwing() {
         loginScreen.validateLogin(username: Constants.username, password: Constants.password)
-        homeScreen.tapOnOverLaterals()
-        equipmentScreen.checkForOverLaterals()
+        homeScreen.tapOnKettleSwing()
     }
     
-    func testTapOnBackButton() {
+    func testOverLaterals() {
+        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
+        homeScreen.tapOnOverLaterals()
+    }
+    
+    func testButterflyReverse() {
         loginScreen.validateLogin(username: Constants.username, password: Constants.password)
         homeScreen.tapOnButterflyReverse()
-        equipmentScreen.tapOnBackButton()
     }
     
     func testCheckForKettleSwing_Image() {
         loginScreen.validateLogin(username: Constants.username, password: Constants.password)
         homeScreen.tapOnKettleSwing()
         equipmentScreen.checkForKettleSwing_Image()
+    }
+    
+    func testCheckForProductsWithNumber() {
+        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
+        homeScreen.checkForProductsWithNumber()
+    }
+    
+    func testCheckForProductsWithName() {
+        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
+        homeScreen.checkForProductsWithName()
     }
 }

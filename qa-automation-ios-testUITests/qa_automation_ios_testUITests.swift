@@ -33,25 +33,21 @@ class qa_automation_ios_testUITests: XCTestCase {
     func testLogin() {
         // UI tests must launch the application that they test.
         loginScreen.validateLogin(username: Constants.username, password: Constants.password)
-        XCTAssertTrue(homeScreen.searchExercises.exists)
     }
     
     func testInvalidLogin() {
         loginScreen.invalidLogin(username: Constants.usernameInvalid, password: Constants.passwordInvalid)
-        XCTAssertFalse(homeScreen.searchExercises.exists)
-        loginScreen.dismissButton.tap()
     }
     
     func testInvalidLoginWithoutUsername() {
         loginScreen.invalidLoginWithoutUsername()
-        XCTAssertTrue(loginScreen.wrongCredentials.exists)
-        loginScreen.dismissButton.tap()
     }
     
     func testInvalidLoginWithoutPassword() {
         loginScreen.invalidLoginWithoutPassword(username: Constants.username)
-        XCTAssert(loginScreen.wrongCredentials.exists)
-        loginScreen.dismissButton.tap()
     }
     
+    func testTryAgainDismissButton() {
+        loginScreen.tryAgainDismissButton()
+    }
 }
