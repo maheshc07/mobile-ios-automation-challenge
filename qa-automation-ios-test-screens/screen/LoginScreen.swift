@@ -9,33 +9,29 @@ import Foundation
 import XCTest
 
 class LoginScreen {
-    let usernameTextField = XCUIApplication()/*@START_MENU_TOKEN@*/.textFields["usernameTextField"]/*[[".textFields[\"Username\"]",".textFields[\"usernameTextField\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-    let passwordTextField = XCUIApplication()/*@START_MENU_TOKEN@*/.textFields["passwordTextField"]/*[[".textFields[\"Password\"]",".textFields[\"passwordTextField\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-    let loginButton = XCUIApplication().buttons["Login"]
-    let dismissButton = XCUIApplication().buttons["Dismiss"]
-    let wrongCredentials = XCUIApplication().staticTexts["Wrong credentials"]
+    let usernameTextField = XCUIApplication().textFields[AccessibilityIndentifiers.Home.usernameTextField]
+    let passwordTextField = XCUIApplication().textFields[AccessibilityIndentifiers.Home.passwordTextField]
+    let loginButton = XCUIApplication().buttons[AccessibilityIndentifiers.Home.loginButton]
+    let dismissButton = XCUIApplication().buttons[AccessibilityIndentifiers.Home.dismissButton]
+    let wrongCredentials = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.wrongCredentials]
     
     func validateLogin(username: String, password: String) {
         usernameTextField.tap()
         usernameTextField.typeText(username)
         passwordTextField.tap()
-        CustomWait.waitForElementToAppear(passwordTextField, timeoutInSec: 3)
         passwordTextField.typeText(password)
-        CustomWait.waitForElementToAppear(loginButton, timeoutInSec: 3)
         loginButton.tap()
     }
 
     func invalidLogin(username: String, password: String) {
         usernameTextField.tap()
         usernameTextField.typeText(username)
-        CustomWait.waitForElementToAppear(passwordTextField, timeoutInSec: 3)
         passwordTextField.tap()
         passwordTextField.typeText(password)
-        CustomWait.waitForElementToAppear(loginButton, timeoutInSec: 3)
         loginButton.tap()
     }
     
-    func invalidLoginWithoutUsername(){
+    func invalidLoginWithoutUsername() {
         usernameTextField.tap()
         loginButton.tap()
     }

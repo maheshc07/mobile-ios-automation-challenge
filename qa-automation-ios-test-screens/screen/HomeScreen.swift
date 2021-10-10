@@ -8,156 +8,156 @@
 import Foundation
 import XCTest
 
-class HomeScreen {
-    let searchExercises = XCUIApplication().navigationBars["qa_automation_ios_test.ListView"].searchFields["Search exercises"]
-    let kettlebellSwing_345 = XCUIApplication().staticTexts["345: 2 Handed Kettlebell Swing"]
-    let shoulderPress_227 = XCUIApplication().staticTexts["227: Arnold Shoulder Press"]
-    let axeHold_289 = XCUIApplication().staticTexts["289: Axe Hold"]
-    let backSquat_637 = XCUIApplication().staticTexts["637: Back Squat"]
-    let abRollout_343 = XCUIApplication().staticTexts["343: Barbell Ab Rollout"]
-    let hackSquats_407 = XCUIApplication().staticTexts["407: Barbell Hack Squats"]
-    let barbellLunges_405 = XCUIApplication().staticTexts["405: Barbell Lunges"]
-    let tricepsExtension_344 = XCUIApplication().staticTexts["344: Barbell Triceps Extension"]
-    let bearWalk_307 = XCUIApplication().staticTexts["307: Bear Walk"]
-    let benchPress_192 = XCUIApplication().staticTexts["192: Bench Press"]
-    let pressDumbbells_97 = XCUIApplication().staticTexts["97: Benchpress Dumbbells"]
-    let pressNarrowGrip_88 = XCUIApplication().staticTexts["88: Bench Press Narrow Grip"]
-    let highPulls_268 = XCUIApplication().staticTexts["268: Bent High Pulls"]
-    let barbellRow_412 = XCUIApplication().staticTexts["412: Bent Over Barbell Row"]
-    let dumbbellRows_362 = XCUIApplication().staticTexts["362: Bentover Dumbbell Rows"]
-    let lateralRaises_421 = XCUIApplication().staticTexts["421: Bent-over Lateral Raises"]
-    let overLaterals_919 = XCUIApplication().staticTexts["919: Bent Over Laterals"]
-    let overRowing_109 = XCUIApplication().staticTexts["109: Bent Over Rowing"]
-    let rowingReverse_110 = XCUIApplication().staticTexts["110: Bent Over Rowing Reverse"]
-    let curlsWithBarbell_74 = XCUIApplication().staticTexts["74: Biceps Curls With Barbell"]
-    let curlsWithDumbbell_81 = XCUIApplication().staticTexts["81: Biceps Curls With Dumbbell"]
-    let curlsWithSZbar_80 = XCUIApplication().staticTexts["80: Biceps Curls With SZ-bar"]
-    let curlsWithCable_129 = XCUIApplication().staticTexts["129: Biceps Curl With Cable"]
-    let bodyUps_341 = XCUIApplication().staticTexts["341: Body-Ups"]
-    let bracedSquat_342 = XCUIApplication().staticTexts["342: Braced Squat"]
-    let splitSquat_914 = XCUIApplication().staticTexts["914: Bulgarian Split Squat"]
-    let burpees_354 = XCUIApplication().staticTexts["354: Burpees"]
-    let butterfly_98 = XCUIApplication().staticTexts["98: Butterfly"]
-    let butterflyNarrowGrip_99 = XCUIApplication().staticTexts["99: Butterfly Narrow Grip"]
-    let butterflyReverse_124 = XCUIApplication().staticTexts["124: Butterfly Reverse"]
+public class HomeScreen: CommonUtility {
+    let searchExercises = XCUIApplication().navigationBars[AccessibilityIndentifiers.Home.listView].searchFields[AccessibilityIndentifiers.Home.searchExercises]
     
     func tapKettleSwing() {
-        kettlebellSwing_345.tap()
+        let kettlebellSwing_345 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.kettlebellSwing_345]
+        tapOn(kettlebellSwing_345, action: .exists, description: "\(kettlebellSwing_345) is not displayed.")
     }
     
     func tapShoulderPress() {
-        shoulderPress_227.tap()
+        let shoulderPress_227 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.shoulderPress_227]
+        tapOn(shoulderPress_227, action: .exists, description: "\(shoulderPress_227) is not displayed.")
     }
     
     func tapAxeHold() {
-        axeHold_289.tap()
+        let axeHold_289 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.axeHold_289]
+        tapOn(axeHold_289, action: .exists, description: "\(axeHold_289) is not displayed.")
     }
     
     func tapbBackSquat() {
-        backSquat_637.tap()
+        let backSquat_637 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.backSquat_637]
+        tapOn(backSquat_637, action: .exists, description: "\(backSquat_637) is not displayed.")
     }
     
     func tapAbRollout() {
-        abRollout_343.tap()
+        let abRollout_343 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.abRollout_343]
+        tapOn(abRollout_343, action: .exists, description: "\(abRollout_343) is not displayed.")
     }
     
     func tapHackSquats() {
-        hackSquats_407.tap()
+        let hackSquats_407 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.hackSquats_407]
+        tapOn(hackSquats_407, action: .exists, description: "\(hackSquats_407) is not displayed.")
     }
     
     func tapBarbellLunges() {
-        barbellLunges_405.tap()
+        let barbellLunges_405 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.barbellLunges_405]
+        tapOn(barbellLunges_405, action: .exists, description: "\(barbellLunges_405) is not displayed.")
     }
     
     func tapTricepsExtension() {
-        tricepsExtension_344.tap()
+        let tricepsExtension_344 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.tricepsExtension_344]
+        tapOn(tricepsExtension_344, action: .exists, description: "\(tricepsExtension_344) is not displayed.")
     }
     
     func tapBearWalk() {
-        bearWalk_307.tap()
+        let bearWalk_307 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.bearWalk_307]
+        tapOn(bearWalk_307, action: .exists, description: "\(bearWalk_307) is not displayed.")
     }
     
     func tapBenchPress() {
-        benchPress_192.tap()
+        let benchPress_192 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.benchPress_192]
+        tapOn(benchPress_192, action: .exists, description: "\(benchPress_192) is not displayed.")
     }
     
     func tapPressDumbbells() {
-        pressDumbbells_97.tap()
+        let pressDumbbells_97 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.pressDumbbells_97]
+        tapOn(pressDumbbells_97, action: .exists, description: "\(pressDumbbells_97) is not displayed.")
     }
     
     func tapPressNarrowGrip() {
-        pressNarrowGrip_88.tap()
+        let pressNarrowGrip_88 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.pressNarrowGrip_88]
+        tapOn(pressNarrowGrip_88, action: .exists, description: "\(pressNarrowGrip_88) is not displayed.")
     }
     
     func tapHighPulls() {
-        highPulls_268.tap()
+        let highPulls_268 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.highPulls_268]
+        tapOn(highPulls_268, action: .exists, description: "\(highPulls_268) is not displayed.")
     }
     
     func tapBarbellRow() {
-        barbellRow_412.tap()
+        let barbellRow_412 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.barbellRow_412]
+        tapOn(barbellRow_412, action: .exists, description: "\(barbellRow_412) is not displayed.")
     }
     
     func tapDumbbellRows() {
-        dumbbellRows_362.tap()
+        let dumbbellRows_362 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.dumbbellRows_362]
+        tapOn(dumbbellRows_362, action: .exists, description: "\(dumbbellRows_362) is not displayed.")
     }
     
     func tapLateralRaises() {
-        lateralRaises_421.tap()
+        let lateralRaises_421 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.lateralRaises_421]
+        tapOn(lateralRaises_421, action: .exists, description: "\(lateralRaises_421) is not displayed.")
     }
     
     func tapOverLaterals() {
-        overLaterals_919.tap()
+        let overLaterals_919 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.overLaterals_919]
+        tapOn(overLaterals_919, action: .exists, description: "\(overLaterals_919) is not displayed.")
     }
     
     func tapOverRowing() {
-        overRowing_109.tap()
+        let overRowing_109 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.overRowing_109]
+        tapOn(overRowing_109, action: .exists, description: "\(overRowing_109) is not displayed.")
     }
     
     func tapRowingReverse() {
-        rowingReverse_110.tap()
+        let rowingReverse_110 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.rowingReverse_110]
+        tapOn(rowingReverse_110, action: .exists, description: "\(rowingReverse_110) is not displayed.")
     }
     
     func tapCurlsWithBarbell() {
-        curlsWithBarbell_74.tap()
+        let curlsWithBarbell_74 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.curlsWithBarbell_74]
+        tapOn(curlsWithBarbell_74, action: .exists, description: "\(curlsWithBarbell_74) is not displayed.")
     }
     
     func tapCurlsWithDumbbell() {
-        curlsWithDumbbell_81.tap()
+        let curlsWithDumbbell_81 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.curlsWithDumbbell_81]
+        tapOn(curlsWithDumbbell_81, action: .exists, description: "\(curlsWithDumbbell_81) is not displayed.")
     }
     
     func tapCurlsWithSZbar() {
-        curlsWithSZbar_80.tap()
+        let curlsWithSZbar_80 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.curlsWithSZbar_80]
+        tapOn(curlsWithSZbar_80, action: .exists, description: "\(curlsWithSZbar_80) is not displayed.")
     }
     
     func tapCurlsWithCable() {
-        curlsWithCable_129.tap()
+        let curlsWithCable_129 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.curlsWithCable_129]
+        tapOn(curlsWithCable_129, action: .exists, description: "\(curlsWithCable_129) is not displayed.")
     }
     
     func tapBodyUps() {
-        bodyUps_341.tap()
+        let bodyUps_341 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.bodyUps_341]
+        tapOn(bodyUps_341, action: .exists, description: "\(bodyUps_341) is not displayed.")
     }
     
     func tapBracedSquat() {
-        bracedSquat_342.tap()
+        let bracedSquat_342 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.bracedSquat_342]
+        tapOn(bracedSquat_342, action: .exists, description: "\(bracedSquat_342) is not displayed.")
     }
     
     func tapSplitSquat() {
-        splitSquat_914.tap()
+        let splitSquat_914 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.splitSquat_914]
+        tapOn(splitSquat_914, action: .exists, description: "\(splitSquat_914) is not displayed.")
     }
     
     func tapBurpees() {
-        burpees_354.tap()
+        let burpees_354 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.burpees_354]
+        tapOn(burpees_354, action: .exists, description: "\(burpees_354) is not displayed.")
     }
     
     func tapButterfly() {
-        butterfly_98.tap()
+        let butterfly_98 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.butterfly_98]
+        tapOn(butterfly_98, action: .exists, description: "\(butterfly_98) is not displayed.")
     }
     
     func tapButterflyNarrowGrip() {
-        butterflyNarrowGrip_99.tap()
+        let butterflyNarrowGrip_99 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.butterflyNarrowGrip_99]
+        tapOn(butterflyNarrowGrip_99, action: .exists, description: "\(butterflyNarrowGrip_99) is not displayed.")
     }
     
     func tapButterflyReverse() {
-        butterflyReverse_124.tap()
+        let butterflyReverse_124 = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.butterflyReverse_124]
+        tapOn(butterflyReverse_124, action: .exists, description: "\(butterflyReverse_124) is not displayed.")
     }
 }
