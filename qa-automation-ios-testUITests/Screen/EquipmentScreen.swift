@@ -9,21 +9,21 @@
 import XCTest
 
 class EquipmentScreen: CommonUtility {
-    let kettlebellSwing = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.kettlebellSwing]
-    let butterflyReverse = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.butterflyReverse]
+    let kettlebellSwing = app.staticTexts[AccessibilityIndentifiers.Equipment.kettlebellSwing]
+    let butterflyReverse = app.staticTexts[AccessibilityIndentifiers.Equipment.butterflyReverse]
     
     func checkForOverLaterals() {
-        let overLaterals = XCUIApplication().staticTexts[AccessibilityIndentifiers.Home.overLaterals]
+        let overLaterals = app.staticTexts[AccessibilityIndentifiers.Equipment.overLaterals]
         checkForElement(overLaterals, action: .exists, description: "\(overLaterals)")
     }
     
     func tapOnBackButton() {
-        let backButton = XCUIApplication().buttons[AccessibilityIndentifiers.Home.backButton]
+        let backButton = app.buttons[AccessibilityIndentifiers.Equipment.backButton]
         tapOn(backButton, action: .exists, description: "\(backButton)")
     }
     
     func checkForKettleSwing_Image() {
-        let kettlebellSwing_Image = XCUIApplication().images[AccessibilityIndentifiers.Home.kettlebellSwing_Image]
+        let kettlebellSwing_Image = app.images[AccessibilityIndentifiers.Equipment.kettlebellSwing_Image]
         checkForElement(kettlebellSwing_Image, action: .exists, description: "\(kettlebellSwing_Image)")
     }
 }

@@ -9,15 +9,15 @@ import Foundation
 
 public enum AccessibilityIndentifiers {
     
-    enum Home {
-        // LoginScreen Accessibility Identifiers
+    enum Login {
         static let usernameTextField = "usernameTextField"
         static let passwordTextField = "passwordTextField"
         static let loginButton = "Login"
         static let dismissButton = "Dismiss"
         static let wrongCredentials = "Wrong credentials"
-        
-        // HomeScreen Accessiblity Identifiers
+    }
+    
+    enum Home {
         static let listView = "qa_automation_ios_test.ListView"
         static let searchExercises = "Search exercises"
         static let browsecatalogue = "Browse Catalog"
@@ -32,8 +32,9 @@ public enum AccessibilityIndentifiers {
         static let butterfly_98 = "98: Butterfly"
         static let butterflyNarrowGrip_99 = "99: Butterfly Narrow Grip"
         static let butterflyReverse_124 = "124: Butterfly Reverse"
-       
-        // EquipmentScreen Accessiblity Identifiers
+    }
+    
+    enum Equipment {
         static let backButton = "Back"
         static let kettlebellSwing = "2 Handed Kettlebell Swing"
         static let overLaterals = "Bent Over Laterals"
@@ -45,6 +46,5 @@ public enum AccessibilityIndentifiers {
         static let dumbbellRows = "Bentover Dumbbell Rows"
         static let bodyUps = "Body-Ups"
         static let bracedSquat = "Braced Squat"
-        
     }
 }

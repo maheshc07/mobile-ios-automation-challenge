@@ -8,11 +8,13 @@
 
 import XCTest
 
-class HomeTest: XCTestCase {
+class HomeTest: BaseUITests {
     var app: XCUIApplication!
     let loginScreen = LoginScreen()
     let homeScreen = HomeScreen()
     let equipmentScreen = EquipmentScreen()
+    let username = TestData.Login.username
+    let password = TestData.Login.password
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,33 +34,35 @@ class HomeTest: XCTestCase {
     }
 
     func testKettlebellSwing() {
-        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
+        loginScreen.validateLogin(username: username, password: password)
         homeScreen.tapOnKettleSwing()
     }
     
     func testOverLaterals() {
-        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
+        loginScreen.validateLogin(username: username, password: password)
         homeScreen.tapOnOverLaterals()
     }
     
     func testButterflyReverse() {
-        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
+        loginScreen.validateLogin(username: username, password: password)
         homeScreen.tapOnButterflyReverse()
     }
     
     func testCheckForKettleSwing_Image() {
-        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
+        loginScreen.validateLogin(username: username, password: password)
         homeScreen.tapOnKettleSwing()
         equipmentScreen.checkForKettleSwing_Image()
     }
     
     func testCheckForProductsWithNumber() {
-        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
-        homeScreen.checkForProductsWithNumber()
+        let productNumber = TestData.Product.productNumber
+        loginScreen.validateLogin(username: username, password: password)
+        homeScreen.checkForProductsWithNumber(productNumber: productNumber)
     }
     
     func testCheckForProductsWithName() {
-        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
-        homeScreen.checkForProductsWithName()
+        let productNumber = TestData.Product.productName
+        loginScreen.validateLogin(username: username, password: password)
+        homeScreen.checkForProductsWithName(productName: productNumber)
     }
 }

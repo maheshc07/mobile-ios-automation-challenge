@@ -8,35 +8,33 @@
 import Foundation
 import XCTest
 
-class qa_automation_ios_testUITests: XCTestCase {
-    var app: XCUIApplication!
+class qa_automation_ios_testUITests: BaseUITests {
     let loginScreen = LoginScreen()
     let homeScreen = HomeScreen()
+    let username = TestData.Login.username
+    let password = TestData.Login.password
+    let usernameInvalid = TestData.Login.usernameInvalid
+    let passwordInvalid = TestData.Login.passwordInvalid
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-        self.app = XCUIApplication()
-        app.launchArguments.append(contentsOf: ["--UITest"])
-        self.app.launch()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
 //        GenericLibrary.deleteApp(appName: "Gymondo")
-        app.terminate()
     }
 
     func testLogin() {
         // UI tests must launch the application that they test.
-        loginScreen.validateLogin(username: Constants.username, password: Constants.password)
+        loginScreen.validateLogin(username: username, password: password)
     }
     
     func testInvalidLogin() {
-        loginScreen.invalidLogin(username: Constants.usernameInvalid, password: Constants.passwordInvalid)
+        loginScreen.invalidLogin(username: usernameInvalid, password: passwordInvalid)
     }
     
     func testInvalidLoginWithoutUsername() {
@@ -44,7 +42,7 @@ class qa_automation_ios_testUITests: XCTestCase {
     }
     
     func testInvalidLoginWithoutPassword() {
-        loginScreen.invalidLoginWithoutPassword(username: Constants.username)
+        loginScreen.invalidLoginWithoutPassword(username: username)
     }
     
     func testTryAgainDismissButton() {
