@@ -15,7 +15,7 @@ class HomeTest: BaseUITests {
     let equipmentScreen = EquipmentScreen()
     let username = TestData.Login.username
     let password = TestData.Login.password
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
@@ -25,14 +25,14 @@ class HomeTest: BaseUITests {
         app.launchArguments.append(contentsOf: ["--UITest"])
         self.app.launch()
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-//        GenericLibrary.deleteApp(appName: "Gymondo")
+        //        GenericLibrary.deleteApp(appName: "Gymondo")
         app.terminate()
     }
-
+    
     func testKettlebellSwing() {
         loginScreen.validateLogin(username: username, password: password)
         homeScreen.tapOnKettleSwing()
