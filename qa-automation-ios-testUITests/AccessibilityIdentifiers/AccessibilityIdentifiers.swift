@@ -7,7 +7,7 @@
 //
 import Foundation
 
-public enum AccessibilityIndentifiers {
+public enum AccessibilityIdentifiers {
     
     enum Login {
         static let usernameTextField = "usernameTextField"
